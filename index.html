@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizbuch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-title">Notizen</h1>
+            <button class="new-note-btn" id="newNoteBtn">
+                <span class="plus-icon">+</span>
+                Neue Notiz
+            </button>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Alle Notizen</h2>
+                    <span class="note-count" id="noteCount">0 Notizen</span>
+                </div>
+                <div class="notes-list" id="notesList">
+                </div>
+            </aside>
+
+            <main class="editor-area">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-content">
+                        <div class="welcome-icon">📝</div>
+                        <h2>Willkommen bei deinem Notizbuch</h2>
+                        <p>Erstelle deine erste Notiz, um loszulegen</p>
+                    </div>
+                </div>
+
+                <div class="editor-container" id="editorContainer" style="display: none;">
+                    <div class="editor-header">
+                        <input 
+                            type="text" 
+                            class="note-title" 
+                            id="noteTitle" 
+                            placeholder="Titel eingeben..."
+                        >
+                        <div class="editor-actions">
+                            <button class="action-btn save-btn" id="saveBtn" title="Speichern">
+                                💾
+                            </button>
+                            <button class="action-btn delete-btn" id="deleteBtn" title="Löschen">
+                                🗑️
+                            </button>
+                        </div>
+                    </div>
+                    <textarea 
+                        class="note-content" 
+                        id="noteContent" 
+                        placeholder="Deine Notiz hier eingeben..."
+                    ></textarea>
+                    <div class="editor-footer">
+                        <span class="last-saved" id="lastSaved"></span>
+                        <span class="word-count" id="wordCount">0 Wörter</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" style="display: none;">
+        <div class="modal">
+            <h3>Notiz löschen?</h3>
+            <p>Diese Aktion kann nicht rückgängig gemacht werden.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelDelete">Abbrechen</button>
+                <button class="btn btn-danger" id="confirmDelete">Löschen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
