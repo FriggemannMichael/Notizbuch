@@ -1,0 +1,3 @@
+const output = ids.map(id => `    ${id}: document.getElementById('${id}'),`).join('\n');
+copy(`this.elements = {\n${output}\n};`);
+
